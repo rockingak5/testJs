@@ -1,0 +1,83 @@
+.default_before_script: &default_before_script
+  - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+  - eval $(ssh-agent -s)
+
+variables:
+  BUILD_SCRIPT: >
+    bash build.sh
+    --download-file=.env,
+    --time-period=60
+
+  DEPLOY_SCRIPT: >
+    bash deploy.sh
+    --mount-data=public:/app/public
+    --time-period=120
+
+  DEV_SCRIPT: >
+    --host-port=3033
+    --container-port=3500
+
+  STG_RLS_SCRIPT: >
+    --host-port=5500
+    --container-port=3500
+    --docker--network=kakeru-event-campaign-stg
+
+  PROD_SCRIPT: >
+    --deploy-ssh-host=54.238.212.234
+    --deploy-ssh-port=22
+    --host-port=3033
+    --container-port=3500
+
+build-develop:
+  stage: build
+  before_script: *default_before_script
+  script:
+    - NEW_BUILD_SCRIPT=$(echo "${BUILD_SCRIPT}${DEV_SCRIPT}" | tr '\n' ' ')
+    - bash /etc/gitlab-runner/select-sever-cicd.sh "$NEW_BUILD_SCRIPT"
+  only:
+    - develop
+
+deploy-develop:
+  stage: deploy
+  before_script: *default_before_script
+  script:
+    - NEW_DEPLOY_SCRIPT=$(echo "${DEPLOY_SCRIPT}${DEV_SCRIPT}" | tr '\n' ' ')
+    - bash /etc/gitlab-runner/select-sever-cicd.sh "$NEW_DEPLOY_SCRIPT"
+  only:
+    - develop
+
+build-staging-release:
+  stage: build
+  before_script: *default_before_script
+  script:
+    - NEW_BUILD_SCRIPT=$(echo "${BUILD_SCRIPT}${STG_RLS_SCRIPT}" | tr '\n' ' ')
+    - bash /etc/gitlab-runner/select-sever-cicd.sh "$NEW_BUILD_SCRIPT"
+  only:
+    - staging-release
+
+deploy-staging-release:
+  stage: deploy
+  before_script: *default_before_script
+  script:
+    - NEW_DEPLOY_SCRIPT=$(echo "${DEPLOY_SCRIPT}${STG_RLS_SCRIPT}" | tr '\n' ' ')
+    - bash /etc/gitlab-runner/select-sever-cicd.sh "$NEW_DEPLOY_SCRIPT"
+  only:
+    - staging-release
+
+build-production:
+  stage: build
+  before_script: *default_before_script
+  script:
+    - NEW_BUILD_SCRIPT=$(echo "${BUILD_SCRIPT}${PROD_SCRIPT}" | tr '\n' ' ')
+    - bash /etc/gitlab-runner/select-sever-cicd.sh "$NEW_BUILD_SCRIPT"
+  only:
+    - master
+
+deploy-production:
+  stage: deploy
+  before_script: *default_before_script
+  script:
+    - NEW_DEPLOY_SCRIPT=$(echo "${DEPLOY_SCRIPT}${PROD_SCRIPT}" | tr '\n' ' ')
+    - bash /etc/gitlab-runner/select-sever-cicd.sh "$NEW_DEPLOY_SCRIPT"
+  only:
+    - master

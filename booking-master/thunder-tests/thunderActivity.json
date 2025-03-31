@@ -1,0 +1,100 @@
+[
+  {
+    "_id": "9a4f6a17-ebf8-401d-aa4f-a177f77cdb3d",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}",
+    "url": "{{base_url}}",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-11T06:11:15.261Z",
+    "modified": "2023-01-11T06:11:15.261Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "ce15f263-8f63-45b5-914d-34d8aca486fa",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/",
+    "url": "{{base_url}}/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-11T06:11:17.109Z",
+    "modified": "2023-01-11T06:11:17.109Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "781b2b2f-6dc2-4713-ac55-bb0e4c6f3269",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/api/sess",
+    "url": "{{base_url}}/api/sess",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-11T06:11:32.862Z",
+    "modified": "2023-01-11T06:11:32.862Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "266654cf-4716-4f4f-a93f-4692889be420",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/api/logo",
+    "url": "{{base_url}}/api/logo",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-11T06:11:43.011Z",
+    "modified": "2023-01-11T06:11:43.011Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "82f847f0-6299-4448-a852-fd32a8ad4572",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/api/login",
+    "url": "{{base_url}}/api/login",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-11T06:11:47.671Z",
+    "modified": "2023-01-11T06:11:47.671Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "1b45193a-1722-48a2-95e0-2a0a921c4095",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/api/login",
+    "url": "{{base_url}}/api/login",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-01-11T06:11:51.471Z",
+    "modified": "2023-01-11T06:12:28.660Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formencoded",
+      "raw": "",
+      "form": [
+        {
+          "name": "username",
+          "value": "pregio_admin"
+        },
+        {
+          "name": "password",
+          "value": "dCGG6Kj3hN"
+        }
+      ]
+    },
+    "tests": []
+  }
+]

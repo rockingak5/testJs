@@ -1,0 +1,18 @@
+{
+    "delay": "1500",
+    "watch": [
+        "backend/*",
+        "backend-src"
+    ],
+    "ext": ".js,.ts",
+    "ignore": [
+        "frontend/*",
+        "public/*",
+        "logs/*",
+        "tsconfig.json"
+    ],
+    "execMap": {
+        "js": "node",
+        "ts": "ts-node --files"
+    }
+}

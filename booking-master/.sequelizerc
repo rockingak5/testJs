@@ -1,0 +1,11 @@
+require('dotenv').config()
+require("./module-alias")
+const path = require('path')
+
+module.exports = {
+	env: process.env.NODE_ENV || 'development',
+	config: path.resolve('./backend/config', 'migration.config.js'),
+	'models-path': path.resolve('./backend/infra/models', 'models'),
+	'seeders-path': path.resolve('./backend/seeders'),
+	'migrations-path': path.resolve('./backend/migrations')
+}

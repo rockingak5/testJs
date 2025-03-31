@@ -1,0 +1,48 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "commonjs",
+		"outDir": ".",
+		"rootDir": "backend-src",
+		"removeComments": true,
+		"noEmitHelpers": false,
+		"strict": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"moduleResolution": "node",
+		"baseUrl": "./",
+		"paths": {
+			"~config": ["backend-src/backend/config"],
+			"~controllers": ["backend-src/backend/controllers"],
+			"~controllers/*": ["backend-src/backend/controllers/*"],
+			"~dev_ops/*": ["backend-src/backend/dev_ops/*"],
+			"~enums": ["backend-src/backend/enums"],
+			"~loaders/*": ["backend-src/backend/loaders/*"],
+			"~middlewares/*": ["backend-src/backend/middlewares/*"],
+			"~migrations/*": ["backend-src/backend/migrations/*"],
+			"~models": ["backend-src/backend/models"],
+			"~models/*": ["backend-src/backend/models/*"],
+			"~router/*": ["backend-src/backend/router/*"],
+			"~schemas/*": ["backend-src/backend/schemas/*"],
+			"~seeders/*": ["backend-src/backend/seeders/*"],
+			"~services": ["backend-src/backend/services"],
+			"~services/*": ["backend-src/backend/services/*"],
+			"~types/*": ["backend-src/backend/types/*"],
+			"~utilities": ["backend-src/backend/utilities"],
+			"~utilities/*": ["backend-src/backend/utilities/*"]
+		},
+		"typeRoots": [
+			"./node_modules/@types",
+			"./node_modules/@typescript-eslint/eslint-plugin",
+			"./node_modules/@typescript-eslint/parser"
+		],
+		"types": ["node", "./backend-src/backend/types"],
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"exclude": ["frontend", "public", "node_modules"],
+	"ts-node": {
+		"require": ["tsconfig-paths/register"]
+	}
+}

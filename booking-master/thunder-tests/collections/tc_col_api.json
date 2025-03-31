@@ -1,0 +1,92 @@
+{
+    "_id": "b888cc29-ad49-444e-83cc-c6d8d7b35ab9",
+    "colName": "API",
+    "created": "2023-01-11T06:12:55.909Z",
+    "sortNum": 10000,
+    "folders": [
+        {
+            "_id": "3add2304-1705-4616-a77b-5de81ac64315",
+            "name": "Authentication",
+            "containerId": "",
+            "created": "2023-01-11T06:14:28.784Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "70faf991-dab9-4921-857e-2e798e2d9564",
+            "colId": "b888cc29-ad49-444e-83cc-c6d8d7b35ab9",
+            "containerId": "3add2304-1705-4616-a77b-5de81ac64315",
+            "name": "Master Login",
+            "url": "{{base_url}}/api/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-01-11T06:13:23.990Z",
+            "modified": "2023-01-11T06:14:30.546Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"pregio_admin\",\n  \"password\": \"dCGG6Kj3hN\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0e689937-68b1-43eb-926e-7f1fce3d2c14",
+            "colId": "b888cc29-ad49-444e-83cc-c6d8d7b35ab9",
+            "containerId": "3add2304-1705-4616-a77b-5de81ac64315",
+            "name": "Logout",
+            "url": "{{base_url}}/api/logout",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-01-11T06:14:35.884Z",
+            "modified": "2023-01-11T06:14:51.687Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ac8897ed-cf66-48ed-8c46-653717ac52cd",
+            "colId": "b888cc29-ad49-444e-83cc-c6d8d7b35ab9",
+            "containerId": "3add2304-1705-4616-a77b-5de81ac64315",
+            "name": "Check session",
+            "url": "{{base_url}}/api/sess",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-01-11T06:14:45.757Z",
+            "modified": "2023-01-11T06:15:02.105Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6745da6a-977f-4a49-ab2f-aa0fbfb6a562",
+            "colId": "b888cc29-ad49-444e-83cc-c6d8d7b35ab9",
+            "containerId": "3add2304-1705-4616-a77b-5de81ac64315",
+            "name": "List Categories",
+            "url": "{{base_url}}/api/m/categories",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-01-12T09:06:52.322Z",
+            "modified": "2023-01-12T09:07:12.112Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d3bdd284-8715-4373-b611-b58999d2361e",
+            "colId": "b888cc29-ad49-444e-83cc-c6d8d7b35ab9",
+            "containerId": "3add2304-1705-4616-a77b-5de81ac64315",
+            "name": "Get Category Detail",
+            "url": "{{base_url}}/api/m/categories/3",
+            "method": "GET",
+            "sortNum": 17500,
+            "created": "2023-01-12T09:06:55.310Z",
+            "modified": "2023-01-12T09:08:02.189Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

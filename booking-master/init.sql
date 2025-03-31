@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS kakeru_baby_property_booking_db;
+USE kakeru_baby_property_booking_db;
